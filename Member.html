@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Members - Informatics Student Union</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar {
+      background-color: #e3f2fd;
+      border-radius: 15px;
+      padding: 0.5rem 1rem;
+    }
+    .navbar-brand div {
+      color: #86c5f4;
+      font-size: 1rem;
+    }
+    .member-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #86c5f4;
+      margin-bottom: 1rem;
+    }
+    .member-name {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    .member-detail {
+      color: #7f8c8d;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .member-id {
+      color: #95a5a6;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    .section-title {
+      color: #86c5f4;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-3">
+  <!-- Navbar - Identical to Homepage -->
+  <nav class="navbar navbar-expand-lg mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="Logo No BG.png" alt="logo" width="50" class="me-2"/>
+        <div>
+          <div class="fw-semibold" style="color: #86c5f4;">Informatics</div>
+          <div class="fw-semibold" style="color: #86c5f4;">Student Union</div>        
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="Praktikum Bootstrap Website.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Member.html">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <form class="d-flex">
+            <input class="form-control me-2" style="color: #808080; border-color: #808080;" type="search" placeholder="Search here!" />
+            <button class="btn btn-outline-primary" style="color: #808080; border-color: #808080;" type="submit">Search</button>
+          </form>
+          <a href="#">
+            <i class="bi bi-person-circle fs-4" style="color: #86c5f4;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Alert - Same as Homepage -->
+  <div class="alert alert-info d-flex align-items-center mb-3" role="alert" style="border-radius: 10px;">
+    <i class="bi bi-info-circle-fill me-2"></i>
+    <div>Welcome to Informatics Student Union Members Page!</div>
+  </div>
+
+  <!-- Members Section -->
+  <h3 class="section-title">Our Members</h3>
+  
+  <div class="row">
+    <!-- Member 1 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="Gilbert.png" alt="Stella J. Chandra" class="member-photo">
+        <h4 class="member-name">Gilbert De Foucauld Winardy</h4>
+        <p class="member-detail">President</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 2 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member2.jpg" alt="Gilbert De Foucauld" class="member-photo">
+        <h4 class="member-name">Gilbert De Foucauld</h4>
+        <p class="member-detail">Winning</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 3 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member3.jpg" alt="Michael Christienne" class="member-photo">
+        <h4 class="member-name">Michael Christienne</h4>
+        <p class="member-detail">Savillets</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 4 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member4.jpg" alt="Alicia Joanie Lind" class="member-photo">
+        <h4 class="member-name">Alicia Joanie Lind</h4>
+        <p class="member-detail">Safievans</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 5 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member5.jpg" alt="Ivana Livenag" class="member-photo">
+        <h4 class="member-name">Ivana Livenag</h4>
+        <p class="member-detail">Benchmark</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 6 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member6.jpg" alt="Aurélie Dorène Puiti" class="member-photo">
+        <h4 class="member-name">Aurélie Dorène Puiti</h4>
+        <p class="member-detail">Nota</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 7 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member7.jpg" alt="Édrick Soprène" class="member-photo">
+        <h4 class="member-name">Édrick Soprène</h4>
+        <p class="member-detail">Lionard</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 8 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member8.jpg" alt="Jekari Birkung" class="member-photo">
+        <h4 class="member-name">Jekari Birkung</h4>
+        <p class="member-detail">Safievans</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 9 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member9.jpg" alt="Derick Nerlon" class="member-photo">
+        <h4 class="member-name">Derick Nerlon</h4>
+        <p class="member-detail">Kent Farrar</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 10 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member10.jpg" alt="Patrick Shloucas" class="member-photo">
+        <h4 class="member-name">Patrick Shloucas</h4>
+        <p class="member-detail">Avil</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 11 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member11.jpg" alt="McCrake Stovany" class="member-photo">
+        <h4 class="member-name">McCrake Stovany</h4>
+        <p class="member-detail">Venade Golf</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+    
+    <!-- Member 12 -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="member-card">
+        <img src="member12.jpg" alt="Kalton Fredika" class="member-photo">
+        <h4 class="member-name">Kalton Fredika</h4>
+        <p class="member-detail">Masaki</p>
+        <p class="member-id">ISU 2024</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Informatics Student Union</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar {
+      background-color: #e3f2fd;
+      border-radius: 15px;
+      padding: 0.5rem 1rem;
+    }
+    .navbar-brand div {
+      color: #86c5f4;
+      font-size: 1rem;
+    }
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .about-content {
+      background-color: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .section-title {
+      color: #86c5f4;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+    .vision-mission-section {
+      margin: 3rem 0;
+    }
+    .vision-box, .mission-box {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      height: 100%;
+    }
+    .vision-title, .mission-title {
+      color: #86c5f4;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    .vision-item, .mission-item {
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+    .vision-item:before {
+      content: "\2605"; /* Star symbol */
+      color: #86c5f4;
+      position: absolute;
+      left: 0;
+    }
+    .mission-item:before {
+      content: "\2713"; /* Check mark symbol */
+      color: #86c5f4;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    .contact-info {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e3f2fd;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .contact-icon {
+      color: #86c5f4;
+      font-size: 1.25rem;
+      margin-right: 0.75rem;
+      width: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-3">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="Logo No BG.png" alt="logo" width="50" class="me-2"/>
+        <div>
+          <div class="fw-semibold" style="color: #86c5f4;">Informatics</div>
+          <div class="fw-semibold" style="color: #86c5f4;">Student Union</div>        
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="Praktikum Bootstrap Website.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="About.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="Member.html">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <form class="d-flex">
+            <input class="form-control me-2" style="color: #808080; border-color: #808080;" type="search" placeholder="Search here!" />
+            <button class="btn btn-outline-primary" style="color: #808080; border-color: #808080;" type="submit">Search</button>
+          </form>
+          <a href="#">
+            <i class="bi bi-person-circle fs-4" style="color: #86c5f4;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Alert - Same as Homepage -->
+  <div class="alert alert-info d-flex align-items-center mb-3" role="alert" style="border-radius: 10px;">
+    <i class="bi bi-info-circle-fill me-2"></i>
+    <div>Welcome to Informatics Student Union About Page!</div>
+  </div>
+
+  <!-- About Content -->
+  <!-- About Content -->
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6 text-center">
+      <img src="ISU All.png" alt="About Us Photo" class="img-fluid" style="max-height: 400px;">
+    </div>
+    <div class="col-md-6">
+      <h3 class="section-title">About Us</h3>
+      <div class="about-text">
+        <p>Informatics Student Union adalah organisasi mahasiswa yang berperan sebagai wadah bagi mahasiswa Informatika untuk mengembangkan diri, baik dalam bidang akademik maupun non-akademik.</p>
+      </div>
+    </div>
+      
+      <!-- Vision & Mission Section -->
+      <div class="vision-mission-section">
+        <div class="row">
+          <!-- Vision - Left Side -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="vision-box">
+              <h4 class="vision-title">Vision</h4>
+              <ul class="list-unstyled">
+                <li class="vision-item">Menjadikan Informatika menjadi sebuah tempat yang menyenangkan, dengan rasa kekeluargaan dan solidaritas yang tinggi, sekaligus memajukan performa Informatika dengan meningkatkan seluruh kinerja Informatika.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Mission - Right Side -->
+          <div class="col-md-6">
+            <div class="mission-box">
+              <h4 class="mission-title">Mission</h4>
+              <ul class="list-unstyled">
+                <li class="mission-item">Mewujudkan Informatika yang penuh rasa kekeluargaan dan tanpa diskriminasi</li>
+                <li class="mission-item">Mewujudkan Informatika yang profesional dalam bidangnya dengan proyek dan pengalaman yang baru dan menarik</li>
+                <li class="mission-item">Mewujudkan dan meningkatkan kinerja dari proker ISU untuk mengangkat nama Informatika</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-item">
+              <i class="bi bi-envelope contact-icon"></i>
+              <div>su.imt.mks@ciputra.ac.id</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-item">
+              <i class="bi bi-telephone contact-icon"></i>
+              <div>0823 1955 6278</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

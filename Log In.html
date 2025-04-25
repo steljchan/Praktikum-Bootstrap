@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Bagian head yang sudah ada -->
+  <style>
+    /* Animasi Opening */
+    .opening-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #e3f2fd;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeOut 1.5s ease-in-out forwards 2s;
+    }
+    
+    .opening-logo {
+      width: 150px;
+      margin-bottom: 2rem;
+      animation: zoomIn 1s ease-in-out;
+    }
+    
+    .opening-text {
+      color: #86c5f4;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      animation: slideUp 1s ease-in-out;
+    }
+    
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Opening Screen -->
+  <div class="opening-overlay">
+    <img src="Logo No BG.png" alt="ISU Logo" class="opening-logo">
+    <div class="opening-text">
+      Welcome to Informatics Student Union
+    </div>
+  </div>
+
+  <!-- Konten website yang sudah ada -->
+  <div class="container py-4">
+    <!-- Navbar dan konten lainnya -->
+  </div>
+
+  <script>
+    // Untuk menghilangkan opening screen setelah animasi selesai
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const overlay = document.querySelector('.opening-overlay');
+        overlay.style.display = 'none';
+      }, 3500); // Sesuaikan dengan durasi animasi
+    });
+  </script>
+</body>
+</html>
