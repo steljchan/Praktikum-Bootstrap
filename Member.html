@@ -15,6 +15,7 @@
       background-color: #e3f2fd;
       border-radius: 15px;
       padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
     }
     .navbar-brand div {
       color: #86c5f4;
@@ -25,24 +26,26 @@
       border-radius: 15px;
       padding: 1.5rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      cursor: pointer;
     }
     .member-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
     .member-photo {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: top;
       border: 3px solid #86c5f4;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     .member-name {
       color: #2c3e50;
@@ -50,27 +53,78 @@
       margin-bottom: 0.5rem;
       font-size: 1.25rem;
     }
-    .member-detail {
+    .member-subname {
       color: #7f8c8d;
       font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .member-title {
+      color: #86c5f4;
+      font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    .member-id {
+    .member-year {
       color: #95a5a6;
       font-size: 0.9rem;
-      margin-top: auto;
+      margin-bottom: 0.5rem;
     }
     .section-title {
       color: #86c5f4;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       font-size: 1.75rem;
+      margin-top: 1rem;
+    }
+    .alert {
+      margin-bottom: 2rem;
+    }
+    .container.py-3 {
+      padding-top: 2rem !important;
+      padding-bottom: 3rem !important;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    /* Improved spacing between cards */
+    .members-row {
+      --bs-gutter-x: 1.5rem; /* Horizontal spacing */
+      --bs-gutter-y: 1.5rem; /* Vertical spacing */
+    }
+    
+    /* Modal styles (keep your existing modal styles) */
+    .modal-member-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.5rem;
+      display: block;
+      border: 5px solid #86c5f4;
+    }
+    .modal-member-name {
+      color: #2c3e50;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .modal-member-subname {
+      color: #7f8c8d;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    .member-detail-item {
+      margin-bottom: 1rem;
+    }
+    .member-detail-label {
+      font-weight: 600;
+      color: #86c5f4;
     }
   </style>
 </head>
 <body>
 <div class="container py-3">
-  <!-- Navbar - Identical to Homepage -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg mb-3">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
@@ -103,7 +157,7 @@
     </div>
   </nav>
 
-  <!-- Alert - Same as Homepage -->
+  <!-- Alert -->
   <div class="alert alert-info d-flex align-items-center mb-3" role="alert" style="border-radius: 10px;">
     <i class="bi bi-info-circle-fill me-2"></i>
     <div>Welcome to Informatics Student Union Members Page!</div>
@@ -112,128 +166,183 @@
   <!-- Members Section -->
   <h3 class="section-title">Our Members</h3>
   
-  <div class="row">
+  <div class="row members-row g-3"> <!-- Added custom class and g-3 for consistent spacing -->
     <!-- Member 1 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="Gilbert.png" alt="Stella J. Chandra" class="member-photo">
-        <h4 class="member-name">Gilbert De Foucauld Winardy</h4>
-        <p class="member-detail">President</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal1">
+        <img src="Gilbert.png" alt="Gilbert De Foucauld" class="member-photo">
+        <h4 class="member-name">Gilbert De Foucauld</h4>
+        <p class="member-subname">Winardy</p>
+        <p class="member-title">President ISU</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 2 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member2.jpg" alt="Gilbert De Foucauld" class="member-photo">
-        <h4 class="member-name">Gilbert De Foucauld</h4>
-        <p class="member-detail">Winning</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal2">
+        <img src="member2.jpg" alt="Michael Christienne" class="member-photo">
+        <h4 class="member-name">Michael</h4>
+        <p class="member-subname">Christienne</p>
+        <p class="member-title">Savillets</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 3 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member3.jpg" alt="Michael Christienne" class="member-photo">
-        <h4 class="member-name">Michael Christienne</h4>
-        <p class="member-detail">Savillets</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal3">
+        <img src="member3.jpg" alt="Alicia Joanie Lind" class="member-photo">
+        <h4 class="member-name">Alicia Joanie</h4>
+        <p class="member-subname">Lind</p>
+        <p class="member-title">Safievans</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 4 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member4.jpg" alt="Alicia Joanie Lind" class="member-photo">
-        <h4 class="member-name">Alicia Joanie Lind</h4>
-        <p class="member-detail">Safievans</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal4">
+        <img src="member4.jpg" alt="Ivana Livenag" class="member-photo">
+        <h4 class="member-name">Ivana</h4>
+        <p class="member-subname">Livenag</p>
+        <p class="member-title">Benchmark</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 5 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member5.jpg" alt="Ivana Livenag" class="member-photo">
-        <h4 class="member-name">Ivana Livenag</h4>
-        <p class="member-detail">Benchmark</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal5">
+        <img src="member5.jpg" alt="Aurélie Dorène Puiti" class="member-photo">
+        <h4 class="member-name">Aurélie Dorène</h4>
+        <p class="member-subname">Puiti</p>
+        <p class="member-title">Nota</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 6 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member6.jpg" alt="Aurélie Dorène Puiti" class="member-photo">
-        <h4 class="member-name">Aurélie Dorène Puiti</h4>
-        <p class="member-detail">Nota</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal6">
+        <img src="member6.jpg" alt="Édrick Soprène" class="member-photo">
+        <h4 class="member-name">Édrick</h4>
+        <p class="member-subname">Soprène</p>
+        <p class="member-title">Lionard</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 7 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member7.jpg" alt="Édrick Soprène" class="member-photo">
-        <h4 class="member-name">Édrick Soprène</h4>
-        <p class="member-detail">Lionard</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal7">
+        <img src="member7.jpg" alt="Jekari Birkung" class="member-photo">
+        <h4 class="member-name">Jekari</h4>
+        <p class="member-subname">Birkung</p>
+        <p class="member-title">Safievans</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 8 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member8.jpg" alt="Jekari Birkung" class="member-photo">
-        <h4 class="member-name">Jekari Birkung</h4>
-        <p class="member-detail">Safievans</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal8">
+        <img src="member8.jpg" alt="Derick Nerlon" class="member-photo">
+        <h4 class="member-name">Derick</h4>
+        <p class="member-subname">Nerlon</p>
+        <p class="member-title">Kent Farrar</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 9 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member9.jpg" alt="Derick Nerlon" class="member-photo">
-        <h4 class="member-name">Derick Nerlon</h4>
-        <p class="member-detail">Kent Farrar</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal9">
+        <img src="member9.jpg" alt="Patrick Shloucas" class="member-photo">
+        <h4 class="member-name">Patrick</h4>
+        <p class="member-subname">Shloucas</p>
+        <p class="member-title">Avil</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 10 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member10.jpg" alt="Patrick Shloucas" class="member-photo">
-        <h4 class="member-name">Patrick Shloucas</h4>
-        <p class="member-detail">Avil</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal10">
+        <img src="member10.jpg" alt="McCrake Stovany" class="member-photo">
+        <h4 class="member-name">McCrake</h4>
+        <p class="member-subname">Stovany</p>
+        <p class="member-title">Venade Golf</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 11 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member11.jpg" alt="McCrake Stovany" class="member-photo">
-        <h4 class="member-name">McCrake Stovany</h4>
-        <p class="member-detail">Venade Golf</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal11">
+        <img src="member11.jpg" alt="Kalton Fredika" class="member-photo">
+        <h4 class="member-name">Kalton</h4>
+        <p class="member-subname">Fredika</p>
+        <p class="member-title">Masaki</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
     
     <!-- Member 12 -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="member-card">
-        <img src="member12.jpg" alt="Kalton Fredika" class="member-photo">
-        <h4 class="member-name">Kalton Fredika</h4>
-        <p class="member-detail">Masaki</p>
-        <p class="member-id">ISU 2024</p>
+      <div class="member-card h-100" data-bs-toggle="modal" data-bs-target="#memberModal12">
+        <img src="member12.jpg" alt="Amyz Aulis Annie" class="member-photo">
+        <h4 class="member-name">Amyz Aulis</h4>
+        <p class="member-subname">Annie</p>
+        <p class="member-title">Angela Kervill</p>
+        <p class="member-year">2024</p>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal 1 - Gilbert De Foucauld -->
+<div class="modal fade" id="memberModal1" tabindex="-1" aria-labelledby="memberModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="memberModalLabel1">Member Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="member-photo-container mb-4">
+            <img src="Gilbert.png" alt="Gilbert De Foucauld" class="modal-member-photo img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover; border: 4px solid #86c5f4;">
+          </div>
+          <h3 class="modal-member-name" style="color: #2c3e50; font-weight: 700;">Gilbert De Foucauld</h3>
+          <p class="modal-member-subname" style="color: #7f8c8d; font-size: 1.2rem;">Winardy</p>
+          
+          <div class="text-start px-3">
+            <div class="member-detail-item mb-3">
+              <span class="member-detail-label" style="font-weight: 600; color: #86c5f4;">Position:</span> President ISU
+            </div>
+            <div class="member-detail-item mb-3">
+              <span class="member-detail-label" style="font-weight: 600; color: #86c5f4;">Year:</span> 2024
+            </div>
+            <div class="member-detail-item mb-3">
+              <span class="member-detail-label" style="font-weight: 600; color: #86c5f4;">Department:</span> Informatics
+            </div>
+            <div class="member-detail-item mb-3">
+              <span class="member-detail-label" style="font-weight: 600; color: #86c5f4;">Bio:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.
+            </div>
+            <div class="member-detail-item mb-3">
+              <span class="member-detail-label" style="font-weight: 600; color: #86c5f4;">Contact:</span> gilbert@example.com
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn text-white" style="background-color: #86c5f4; border-color: #86c5f4;">Contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Add similar modals for other members (Modal 2 to Modal 12) -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
